@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="trilhas">
+      <h2 data-cy="trilhasDetailsHeading"><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.detail.title">Trilhas</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ trilhas.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.nome">Nome</span></dt>
+        <dd>
+          <span>{{ trilhas.nome }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.descricao">Descricao</span></dt>
+        <dd>
+          <span>{{ trilhas.descricao }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.comprimento">Comprimento</span></dt>
+        <dd>
+          <span>{{ trilhas.comprimento }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.avaliacao">Avaliacao</span></dt>
+        <dd>
+          <span>{{ trilhas.avaliacao }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.situacoesTrilha">Situacoes Trilha</span></dt>
+        <dd>
+          <div *ngIf="trilhas.situacoesTrilha">
+            <a [routerLink]="['/situacoes-trilha', trilhas.situacoesTrilha?.id, 'view']">{{ trilhas.situacoesTrilha?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.pontosCardeais">Pontos Cardeais</span></dt>
+        <dd>
+          <div *ngIf="trilhas.pontosCardeais">
+            <a [routerLink]="['/pontos-cardeais', trilhas.pontosCardeais?.id, 'view']">{{ trilhas.pontosCardeais?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/trilhas', trilhas.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

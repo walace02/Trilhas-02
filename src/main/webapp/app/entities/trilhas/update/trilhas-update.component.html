@@ -1,0 +1,142 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-trilhas-heading"
+        data-cy="TrilhasCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.trilhas.home.createOrEditLabel"
+      >
+        Create or edit a Trilhas
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.trilhas.nome" for="field_nome">Nome</label>
+          <input type="text" class="form-control" name="nome" id="field_nome" data-cy="nome" formControlName="nome" />
+          <div *ngIf="editForm.get('nome')!.invalid && (editForm.get('nome')!.dirty || editForm.get('nome')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('nome')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.trilhas.descricao" for="field_descricao"
+            >Descricao</label
+          >
+          <input type="text" class="form-control" name="descricao" id="field_descricao" data-cy="descricao" formControlName="descricao" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.trilhas.comprimento" for="field_comprimento"
+            >Comprimento</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="comprimento"
+            id="field_comprimento"
+            data-cy="comprimento"
+            formControlName="comprimento"
+          />
+          <div *ngIf="editForm.get('comprimento')!.invalid && (editForm.get('comprimento')!.dirty || editForm.get('comprimento')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('comprimento')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('comprimento')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.trilhas.avaliacao" for="field_avaliacao"
+            >Avaliacao</label
+          >
+          <input type="text" class="form-control" name="avaliacao" id="field_avaliacao" data-cy="avaliacao" formControlName="avaliacao" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.trilhas.situacoesTrilha" for="field_situacoesTrilha"
+            >Situacoes Trilha</label
+          >
+          <select
+            class="form-control"
+            id="field_situacoesTrilha"
+            data-cy="situacoesTrilha"
+            name="situacoesTrilha"
+            formControlName="situacoesTrilha"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                situacoesTrilhaOption.id === editForm.get('situacoesTrilha')!.value?.id
+                  ? editForm.get('situacoesTrilha')!.value
+                  : situacoesTrilhaOption
+              "
+              *ngFor="let situacoesTrilhaOption of situacoesTrilhasCollection; trackBy: trackSituacoesTrilhaById"
+            >
+              {{ situacoesTrilhaOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.trilhas.pontosCardeais" for="field_pontosCardeais"
+            >Pontos Cardeais</label
+          >
+          <select
+            class="form-control"
+            id="field_pontosCardeais"
+            data-cy="pontosCardeais"
+            name="pontosCardeais"
+            formControlName="pontosCardeais"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                pontosCardeaisOption.id === editForm.get('pontosCardeais')!.value?.id
+                  ? editForm.get('pontosCardeais')!.value
+                  : pontosCardeaisOption
+              "
+              *ngFor="let pontosCardeaisOption of pontosCardeaisCollection; trackBy: trackPontosCardeaisById"
+            >
+              {{ pontosCardeaisOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

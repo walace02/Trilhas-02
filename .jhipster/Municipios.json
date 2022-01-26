@@ -1,0 +1,24 @@
+{
+  "applications": "*",
+  "changelogDate": "20220126235051",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "municipios",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Municipios",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

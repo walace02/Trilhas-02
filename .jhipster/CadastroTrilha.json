@@ -1,0 +1,52 @@
+{
+  "applications": "*",
+  "changelogDate": "20220126235045",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "cadastro_trilha",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "comprimento",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "avaliacao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataHora",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "CadastroTrilha",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "trilhas",
+      "otherEntityRelationshipName": "cadastroTrilha",
+      "ownerSide": true,
+      "relationshipName": "trilhas",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "usuario",
+      "otherEntityRelationshipName": "cadastroTrilha",
+      "relationshipName": "usuario",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

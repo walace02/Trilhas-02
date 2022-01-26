@@ -1,0 +1,32 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "trilhas": {
+      "home": {
+        "title": "Trilhas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Trilhas",
+        "createOrEditLabel": "Create or edit a Trilhas",
+        "notFound": "No Trilhas found"
+      },
+      "created": "A new Trilhas is created with identifier {{ param }}",
+      "updated": "A Trilhas is updated with identifier {{ param }}",
+      "deleted": "A Trilhas is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Trilhas {{ id }}?"
+      },
+      "detail": {
+        "title": "Trilhas"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "comprimento": "Comprimento",
+      "avaliacao": "Avaliacao",
+      "situacoesTrilha": "Situacoes Trilha",
+      "pontosCardeais": "Pontos Cardeais",
+      "pontosVenda": "Pontos Venda",
+      "pontosTuristicos": "Pontos Turisticos",
+      "fotografias": "Fotografias"
+    }
+  }
+}
