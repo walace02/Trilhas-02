@@ -1,0 +1,30 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "pontosTuristicos": {
+      "home": {
+        "title": "Pontos Turisticos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Pontos Turisticos",
+        "createOrEditLabel": "Create or edit a Pontos Turisticos",
+        "notFound": "No Pontos Turisticos found"
+      },
+      "created": "A new Pontos Turisticos is created with identifier {{ param }}",
+      "updated": "A Pontos Turisticos is updated with identifier {{ param }}",
+      "deleted": "A Pontos Turisticos is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pontos Turisticos {{ id }}?"
+      },
+      "detail": {
+        "title": "Pontos Turisticos"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "avaliacao": "Avaliacao",
+      "tiposPontosTuristicos": "Tipos Pontos Turisticos",
+      "pontosCardeais": "Pontos Cardeais",
+      "fotografias": "Fotografias",
+      "trilhas": "Trilhas"
+    }
+  }
+}
