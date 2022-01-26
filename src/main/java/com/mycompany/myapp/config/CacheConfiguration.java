@@ -48,6 +48,21 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.User.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Authority.class.getName());
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.mycompany.myapp.domain.Trilhas.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Trilhas.class.getName() + ".pontosVendas");
+            createCache(cm, com.mycompany.myapp.domain.Trilhas.class.getName() + ".pontosTuristicos");
+            createCache(cm, com.mycompany.myapp.domain.Trilhas.class.getName() + ".fotografias");
+            createCache(cm, com.mycompany.myapp.domain.CadastroTrilha.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Usuario.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Usuario.class.getName() + ".cadastroTrilhas");
+            createCache(cm, com.mycompany.myapp.domain.SituacoesTrilha.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PontosVenda.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PontosVenda.class.getName() + ".fotografias");
+            createCache(cm, com.mycompany.myapp.domain.PontosCardeais.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PontosTuristicos.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.PontosTuristicos.class.getName() + ".fotografias");
+            createCache(cm, com.mycompany.myapp.domain.Municipios.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Fotografias.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
