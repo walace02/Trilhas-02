@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity CadastroTrilha.
+    -->
+    <changeSet id="20220127002437-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="situacoes_trilha_id"
+                                 baseTableName="cadastro_trilha"
+                                 constraintName="fk_cadastro_trilha__situacoes_trilha_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="situacoes_trilha"/>
+
+        <addForeignKeyConstraint baseColumnNames="pontos_cardeais_id"
+                                 baseTableName="cadastro_trilha"
+                                 constraintName="fk_cadastro_trilha__pontos_cardeais_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pontos_cardeais"/>
+
+        <addForeignKeyConstraint baseColumnNames="usuario_id"
+                                 baseTableName="cadastro_trilha"
+                                 constraintName="fk_cadastro_trilha__usuario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="usuario"/>
+    </changeSet>
+</databaseChangeLog>

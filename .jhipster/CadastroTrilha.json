@@ -1,0 +1,73 @@
+{
+  "applications": "*",
+  "changelogDate": "20220127002437",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "cadastro_trilha",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "comprimento",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dataHora",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "CadastroTrilha",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "situacoesTrilha",
+      "otherEntityRelationshipName": "cadastroTrilha",
+      "ownerSide": true,
+      "relationshipName": "situacoesTrilha",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "pontosCardeais",
+      "otherEntityRelationshipName": "cadastroTrilha",
+      "ownerSide": true,
+      "relationshipName": "pontosCardeais",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "pontosVenda",
+      "otherEntityRelationshipName": "cadastroTrilha",
+      "relationshipName": "pontosVenda",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "pontosTuristicos",
+      "otherEntityRelationshipName": "cadastroTrilha",
+      "relationshipName": "pontosTuristicos",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "fotografias",
+      "otherEntityRelationshipName": "cadastroTrilha",
+      "relationshipName": "fotografias",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "usuario",
+      "otherEntityRelationshipName": "cadastroTrilha",
+      "relationshipName": "usuario",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
