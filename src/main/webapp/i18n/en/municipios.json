@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "municipios": {
+      "home": {
+        "title": "Municipios",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Municipios",
+        "createOrEditLabel": "Create or edit a Municipios",
+        "notFound": "No Municipios found"
+      },
+      "created": "A new Municipios is created with identifier {{ param }}",
+      "updated": "A Municipios is updated with identifier {{ param }}",
+      "deleted": "A Municipios is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Municipios {{ id }}?"
+      },
+      "detail": {
+        "title": "Municipios"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "descricao": "Descricao"
+    }
+  }
+}
