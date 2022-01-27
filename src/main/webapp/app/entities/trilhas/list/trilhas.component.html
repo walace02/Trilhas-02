@@ -1,0 +1,96 @@
+<div>
+  <h2 id="page-heading" data-cy="TrilhasHeading">
+    <span jhiTranslate="jhipsterSampleApplicationApp.trilhas.home.title">Trilhas</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.trilhas.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-trilhas"
+        [routerLink]="['/trilhas/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.trilhas.home.createLabel"> Create a new Trilhas </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="trilhas?.length === 0">
+    <span jhiTranslate="jhipsterSampleApplicationApp.trilhas.home.notFound">No trilhas found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="trilhas && trilhas.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.nome">Nome</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.descricao">Descricao</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.comprimento">Comprimento</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.avaliacao">Avaliacao</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.situacoesTrilha">Situacoes Trilha</span></th>
+          <th scope="col"><span jhiTranslate="jhipsterSampleApplicationApp.trilhas.pontosCardeais">Pontos Cardeais</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let trilhas of trilhas; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/trilhas', trilhas.id, 'view']">{{ trilhas.id }}</a>
+          </td>
+          <td>{{ trilhas.nome }}</td>
+          <td>{{ trilhas.descricao }}</td>
+          <td>{{ trilhas.comprimento }}</td>
+          <td>{{ trilhas.avaliacao }}</td>
+          <td>
+            <div *ngIf="trilhas.situacoesTrilha">
+              <a [routerLink]="['/situacoes-trilha', trilhas.situacoesTrilha?.id, 'view']">{{ trilhas.situacoesTrilha?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="trilhas.pontosCardeais">
+              <a [routerLink]="['/pontos-cardeais', trilhas.pontosCardeais?.id, 'view']">{{ trilhas.pontosCardeais?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/trilhas', trilhas.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/trilhas', trilhas.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(trilhas)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
