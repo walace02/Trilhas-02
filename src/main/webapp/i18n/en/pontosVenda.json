@@ -1,0 +1,30 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "pontosVenda": {
+      "home": {
+        "title": "Pontos Vendas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Pontos Venda",
+        "createOrEditLabel": "Create or edit a Pontos Venda",
+        "notFound": "No Pontos Vendas found"
+      },
+      "created": "A new Pontos Venda is created with identifier {{ param }}",
+      "updated": "A Pontos Venda is updated with identifier {{ param }}",
+      "deleted": "A Pontos Venda is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pontos Venda {{ id }}?"
+      },
+      "detail": {
+        "title": "Pontos Venda"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "avaliacao": "Avaliacao",
+      "tiposPontosVenda": "Tipos Pontos Venda",
+      "pontosCardeais": "Pontos Cardeais",
+      "fotografias": "Fotografias",
+      "cadastroTrilha": "Cadastro Trilha"
+    }
+  }
+}
