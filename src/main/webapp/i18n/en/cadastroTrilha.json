@@ -1,0 +1,34 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "cadastroTrilha": {
+      "home": {
+        "title": "Cadastro Trilhas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Cadastro Trilha",
+        "createOrEditLabel": "Create or edit a Cadastro Trilha",
+        "notFound": "No Cadastro Trilhas found"
+      },
+      "created": "A new Cadastro Trilha is created with identifier {{ param }}",
+      "updated": "A Cadastro Trilha is updated with identifier {{ param }}",
+      "deleted": "A Cadastro Trilha is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cadastro Trilha {{ id }}?"
+      },
+      "detail": {
+        "title": "Cadastro Trilha"
+      },
+      "id": "ID",
+      "nomeTrilha": "Nome Trilha",
+      "nomeMunicipio": "Nome Municipio",
+      "descricao": "Descricao",
+      "comprimento": "Comprimento",
+      "dataHora": "Data Hora",
+      "pontosVenda": "Pontos Venda",
+      "pontosTuristicos": "Pontos Turisticos",
+      "fotografias": "Fotografias",
+      "situacoesTrilha": "Situacoes Trilha",
+      "pontosCardeais": "Pontos Cardeais",
+      "usuario": "Usuario"
+    }
+  }
+}
