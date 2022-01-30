@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="fotografias">
+      <h2 data-cy="fotografiasDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.fotografias.detail.title">Fotografias</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ fotografias.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.fotografias.nome">Nome</span></dt>
+        <dd>
+          <span>{{ fotografias.nome }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.fotografias.descricao">Descricao</span></dt>
+        <dd>
+          <span>{{ fotografias.descricao }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.fotografias.autor">Autor</span></dt>
+        <dd>
+          <span>{{ fotografias.autor }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.fotografias.avaliacao">Avaliacao</span></dt>
+        <dd>
+          <span>{{ fotografias.avaliacao }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.fotografias.cadastroTrilha">Cadastro Trilha</span></dt>
+        <dd>
+          <div *ngIf="fotografias.cadastroTrilha">
+            <a [routerLink]="['/cadastro-trilha', fotografias.cadastroTrilha?.id, 'view']">{{ fotografias.cadastroTrilha?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.fotografias.pontosTuristicos">Pontos Turisticos</span></dt>
+        <dd>
+          <div *ngIf="fotografias.pontosTuristicos">
+            <a [routerLink]="['/pontos-turisticos', fotografias.pontosTuristicos?.id, 'view']">{{ fotografias.pontosTuristicos?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.fotografias.pontosVenda">Pontos Venda</span></dt>
+        <dd>
+          <div *ngIf="fotografias.pontosVenda">
+            <a [routerLink]="['/pontos-venda', fotografias.pontosVenda?.id, 'view']">{{ fotografias.pontosVenda?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/fotografias', fotografias.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

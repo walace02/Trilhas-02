@@ -1,0 +1,46 @@
+{
+  "applications": "*",
+  "changelogDate": "20220130190725",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "pontos_venda",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "avaliacao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tiposPontosVenda",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PontosVenda",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "pontosCardeais",
+      "otherEntityRelationshipName": "pontosVenda",
+      "ownerSide": true,
+      "relationshipName": "pontosCardeais",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "fotografias",
+      "otherEntityRelationshipName": "pontosVenda",
+      "relationshipName": "fotografias",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

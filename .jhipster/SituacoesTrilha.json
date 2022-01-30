@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "changelogDate": "20220130190724",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "situacoes_trilha",
+  "fields": [
+    {
+      "fieldName": "situacao",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SituacoesTrilha",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "cadastroTrilha",
+      "otherEntityRelationshipName": "situacoesTrilha",
+      "relationshipName": "cadastroTrilha",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
