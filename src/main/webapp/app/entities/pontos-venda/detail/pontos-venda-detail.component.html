@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="pontosVenda">
+      <h2 data-cy="pontosVendaDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.detail.title">Pontos Venda</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ pontosVenda.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.nome">Nome</span></dt>
+        <dd>
+          <span>{{ pontosVenda.nome }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.descricao">Descricao</span></dt>
+        <dd>
+          <span>{{ pontosVenda.descricao }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.avaliacao">Avaliacao</span></dt>
+        <dd>
+          <span>{{ pontosVenda.avaliacao }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.tiposPontosVenda">Tipos Pontos Venda</span></dt>
+        <dd>
+          <span>{{ pontosVenda.tiposPontosVenda }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.pontosCardeais">Pontos Cardeais</span></dt>
+        <dd>
+          <div *ngIf="pontosVenda.pontosCardeais">
+            <a [routerLink]="['/pontos-cardeais', pontosVenda.pontosCardeais?.id, 'view']">{{ pontosVenda.pontosCardeais?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/pontos-venda', pontosVenda.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
