@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="cadastroTrilha">
+      <h2 data-cy="cadastroTrilhaDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.cadastroTrilha.detail.title">Cadastro Trilha</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ cadastroTrilha.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.cadastroTrilha.nomeTrilha">Nome Trilha</span></dt>
+        <dd>
+          <span>{{ cadastroTrilha.nomeTrilha }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.cadastroTrilha.nomeMunicipio">Nome Municipio</span></dt>
+        <dd>
+          <span>{{ cadastroTrilha.nomeMunicipio }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.cadastroTrilha.descricao">Descricao</span></dt>
+        <dd>
+          <span>{{ cadastroTrilha.descricao }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.cadastroTrilha.comprimento">Comprimento</span></dt>
+        <dd>
+          <span>{{ cadastroTrilha.comprimento }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.cadastroTrilha.dataHora">Data Hora</span></dt>
+        <dd>
+          <span>{{ cadastroTrilha.dataHora | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.cadastroTrilha.usuario">Usuario</span></dt>
+        <dd>
+          <div *ngIf="cadastroTrilha.usuario">
+            <a [routerLink]="['/usuario', cadastroTrilha.usuario?.id, 'view']">{{ cadastroTrilha.usuario?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/cadastro-trilha', cadastroTrilha.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

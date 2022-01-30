@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "situacoesTrilha": {
+      "home": {
+        "title": "Situacoes Trilhas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Situacoes Trilha",
+        "createOrEditLabel": "Create or edit a Situacoes Trilha",
+        "notFound": "No Situacoes Trilhas found"
+      },
+      "created": "A new Situacoes Trilha is created with identifier {{ param }}",
+      "updated": "A Situacoes Trilha is updated with identifier {{ param }}",
+      "deleted": "A Situacoes Trilha is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Situacoes Trilha {{ id }}?"
+      },
+      "detail": {
+        "title": "Situacoes Trilha"
+      },
+      "id": "ID",
+      "situacao": "Situacao",
+      "cadastroTrilha": "Cadastro Trilha"
+    }
+  }
+}
