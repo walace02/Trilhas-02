@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="trilha">
+      <h2 data-cy="trilhaDetailsHeading"><span jhiTranslate="jhipsterSampleApplicationApp.trilha.detail.title">Trilha</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ trilha.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilha.nomeTrilha">Nome Trilha</span></dt>
+        <dd>
+          <span>{{ trilha.nomeTrilha }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilha.nomeMunicipio">Nome Municipio</span></dt>
+        <dd>
+          <span>{{ trilha.nomeMunicipio }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilha.descricao">Descricao</span></dt>
+        <dd>
+          <span>{{ trilha.descricao }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilha.comprimento">Comprimento</span></dt>
+        <dd>
+          <span>{{ trilha.comprimento }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilha.dataHora">Data Hora</span></dt>
+        <dd>
+          <span>{{ trilha.dataHora | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilha.usuario">Usuario</span></dt>
+        <dd>
+          <div *ngIf="trilha.usuario">
+            <a [routerLink]="['/usuario', trilha.usuario?.id, 'view']">{{ trilha.usuario?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.trilha.fotografias">Fotografias</span></dt>
+        <dd>
+          <div *ngIf="trilha.fotografias">
+            <a [routerLink]="['/fotografias', trilha.fotografias?.id, 'view']">{{ trilha.fotografias?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/trilha', trilha.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "fotografias": {
+      "home": {
+        "title": "Fotografias",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Fotografias",
+        "createOrEditLabel": "Create or edit a Fotografias",
+        "notFound": "No Fotografias found"
+      },
+      "created": "A new Fotografias is created with identifier {{ param }}",
+      "updated": "A Fotografias is updated with identifier {{ param }}",
+      "deleted": "A Fotografias is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fotografias {{ id }}?"
+      },
+      "detail": {
+        "title": "Fotografias"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "autor": "Autor",
+      "avaliacao": "Avaliacao",
+      "fotografias": "Fotografias",
+      "fotografias": "Fotografias",
+      "fotografias": "Fotografias"
+    }
+  }
+}
