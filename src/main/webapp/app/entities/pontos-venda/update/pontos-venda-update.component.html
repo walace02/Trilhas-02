@@ -1,0 +1,119 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-pontos-venda-heading"
+        data-cy="PontosVendaCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.home.createOrEditLabel"
+      >
+        Create or edit a Pontos Venda
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.nome" for="field_nome">Nome</label>
+          <input type="text" class="form-control" name="nome" id="field_nome" data-cy="nome" formControlName="nome" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.descricao" for="field_descricao"
+            >Descricao</label
+          >
+          <input type="text" class="form-control" name="descricao" id="field_descricao" data-cy="descricao" formControlName="descricao" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.avaliacao" for="field_avaliacao"
+            >Avaliacao</label
+          >
+          <input type="text" class="form-control" name="avaliacao" id="field_avaliacao" data-cy="avaliacao" formControlName="avaliacao" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.tiposPontosVenda"
+            for="field_tiposPontosVenda"
+            >Tipos Pontos Venda</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="tiposPontosVenda"
+            id="field_tiposPontosVenda"
+            data-cy="tiposPontosVenda"
+            formControlName="tiposPontosVenda"
+          />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.pontosCardeais"
+            for="field_pontosCardeais"
+            >Pontos Cardeais</label
+          >
+          <select
+            class="form-control"
+            id="field_pontosCardeais"
+            data-cy="pontosCardeais"
+            name="pontosCardeais"
+            formControlName="pontosCardeais"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                pontosCardeaisOption.id === editForm.get('pontosCardeais')!.value?.id
+                  ? editForm.get('pontosCardeais')!.value
+                  : pontosCardeaisOption
+              "
+              *ngFor="let pontosCardeaisOption of pontosCardeaisCollection; trackBy: trackPontosCardeaisById"
+            >
+              {{ pontosCardeaisOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.pontosVenda.fotografias" for="field_fotografias"
+            >Fotografias</label
+          >
+          <select class="form-control" id="field_fotografias" data-cy="fotografias" name="fotografias" formControlName="fotografias">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                fotografiasOption.id === editForm.get('fotografias')!.value?.id ? editForm.get('fotografias')!.value : fotografiasOption
+              "
+              *ngFor="let fotografiasOption of fotografiasSharedCollection; trackBy: trackFotografiasById"
+            >
+              {{ fotografiasOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

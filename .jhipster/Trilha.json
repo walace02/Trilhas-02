@@ -1,0 +1,64 @@
+{
+  "applications": "*",
+  "changelogDate": "20220203000846",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "trilha",
+  "fields": [
+    {
+      "fieldName": "nomeTrilha",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nomeMunicipio",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "comprimento",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dataHora",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Trilha",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "situacoesTrilha",
+      "otherEntityRelationshipName": "trilha",
+      "relationshipName": "situacoesTrilha",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "pontosCardeais",
+      "otherEntityRelationshipName": "trilha",
+      "relationshipName": "pontosCardeais",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "usuario",
+      "otherEntityRelationshipName": "cadastroTrilha",
+      "relationshipName": "usuario",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "fotografias",
+      "otherEntityRelationshipName": "fotografias",
+      "relationshipName": "fotografias",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

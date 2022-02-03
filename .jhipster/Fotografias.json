@@ -1,0 +1,51 @@
+{
+  "applications": "*",
+  "changelogDate": "20220203000852",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "fotografias",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "autor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "avaliacao",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Fotografias",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "trilha",
+      "otherEntityRelationshipName": "fotografias",
+      "relationshipName": "fotografias",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "pontosVenda",
+      "otherEntityRelationshipName": "fotografias",
+      "relationshipName": "fotografias",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "pontosTuristicos",
+      "otherEntityRelationshipName": "fotografias",
+      "relationshipName": "fotografias",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

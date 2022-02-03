@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="situacoesTrilha">
+      <h2 data-cy="situacoesTrilhaDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.situacoesTrilha.detail.title">Situacoes Trilha</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ situacoesTrilha.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.situacoesTrilha.situacao">Situacao</span></dt>
+        <dd>
+          <span>{{ situacoesTrilha.situacao }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.situacoesTrilha.trilha">Trilha</span></dt>
+        <dd>
+          <div *ngIf="situacoesTrilha.trilha">
+            <a [routerLink]="['/trilha', situacoesTrilha.trilha?.id, 'view']">{{ situacoesTrilha.trilha?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/situacoes-trilha', situacoesTrilha.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
