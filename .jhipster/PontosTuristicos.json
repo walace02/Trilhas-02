@@ -1,0 +1,46 @@
+{
+  "applications": "*",
+  "changelogDate": "20220203001312",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "pontos_turisticos",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "avaliacao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tiposPontosTuristicos",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PontosTuristicos",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "pontosCardeais",
+      "otherEntityRelationshipName": "pontosTuristicos",
+      "ownerSide": true,
+      "relationshipName": "pontosCardeais",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "fotografias",
+      "otherEntityRelationshipName": "pontosTuristicos",
+      "relationshipName": "fotografias",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
