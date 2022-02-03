@@ -1,0 +1,54 @@
+
+entity Trilha{
+	nomeTrilha String required
+    nomeMunicipio String required
+    descricao String 
+    comprimento Float required
+	data LocalDate
+}
+entity Usuario{
+	email String required
+    nome String required
+    senha String required
+}
+entity SituacoesTrilha{
+	situacao Boolean
+}
+entity PontosVenda{
+	nome String
+    descricao String
+    avaliacao String 
+    tiposPontosVenda String
+}
+entity PontosCardeais{
+	latitude String
+    longitude String
+}
+entity PontosTuristicos{
+	nome String
+    descricao String
+    avaliacao String 
+    tiposPontosTuristicos String
+}
+entity Fotografias{
+	nome String
+	descricao String
+    autor String
+    avaliacao String
+}
+//Arrumar cardinalidade
+relationship OneToMany{
+	Usuario{Trilha} to Trilha
+    Fotografias{Trilha} to Trilha
+    Fotografias{PontosVenda} to PontosVenda
+    Fotografias{PontosTuristicos} to PontosTuristicos
+    Trilha{SituacoesTrilha} to SituacoesTrilha
+    Trilha{PontosCardeais} to PontosCardeais
+}
+relationship OneToOne{
+    PontosVenda{PontosCardeais} to PontosCardeais
+    PontosTuristicos{PontosCardeais} to PontosCardeais
+}
+
+//Alterações feitas na madrugada
+//One To One: CadastroTrilha{SituacoesTrilha} to Usuario
