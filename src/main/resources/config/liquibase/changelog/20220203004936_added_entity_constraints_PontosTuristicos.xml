@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity PontosTuristicos.
+    -->
+    <changeSet id="20220203004936-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="pontos_cardeais_id"
+                                 baseTableName="pontos_turisticos"
+                                 constraintName="fk_pontos_turisticos__pontos_cardeais_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pontos_cardeais"/>
+
+        <addForeignKeyConstraint baseColumnNames="fotografias_id"
+                                 baseTableName="pontos_turisticos"
+                                 constraintName="fk_pontos_turisticos__fotografias_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fotografias"/>
+    </changeSet>
+</databaseChangeLog>

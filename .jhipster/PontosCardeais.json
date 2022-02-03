@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20220203004935",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "pontos_cardeais",
+  "fields": [
+    {
+      "fieldName": "latitude",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "longitude",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PontosCardeais",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "trilha",
+      "otherEntityRelationshipName": "pontosCardeais",
+      "relationshipName": "trilha",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
